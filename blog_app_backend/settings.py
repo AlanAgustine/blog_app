@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-fj&4#te@tbvav7=9dn()75u_q91uoh2ryr3x3po!^@#l(83$-x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+CORS_ALLOW_ALL_ORIGINS=True
+CORS_ALOOW_CREDENTIALS= True
 
 
 # Application definition
@@ -37,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
+    'res_framework',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'blog_app_backend.urls'
@@ -74,11 +78,11 @@ WSGI_APPLICATION = 'blog_app_backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+      'default': {
+          'ENGINE': 'djongo',
+          'NAME': 'blogdb',
+      }
+  }
 
 
 # Password validation
