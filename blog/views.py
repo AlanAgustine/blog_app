@@ -31,7 +31,7 @@ def addBlog(request):
 
 
 @csrf_exempt       
-def searchStudent(request):
+def userBlog(request):
     if request.method == "POST":
         recived_data=json.loads(request.body)
         getuserid=recived_data["user_id"]
